@@ -1,24 +1,16 @@
-package main.java.ro.unibuc.hello.controller;
+package ro.unibuc.hello.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-<<<<<<< Updated upstream
-import org.springframework.web.bind.annotation.ResponseBody;
-import main.java.ro.unibuc.hello.dto.Proprietar;
-import main.java.ro.unibuc.hello.data.ProprietarEntity;
-import ro.unibuc.hello.exception.EntityNotFoundException;
-import main.java.ro.unibuc.hello.service.ProprietarService;
-=======
 
 import ro.unibuc.hello.dto.Proprietar;
 import ro.unibuc.hello.data.ProprietarEntity;
 import ro.unibuc.hello.exception.EntityNotFoundException;
 import ro.unibuc.hello.service.ProprietarService;
 import ro.unibuc.hello.util.CNPValidator;
->>>>>>> Stashed changes
+import ro.unibuc.hello.service.ProprietarService;
 import org.springframework.http.ResponseEntity;
-
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
@@ -82,12 +74,8 @@ public class ProprietarController {
     } catch (IllegalArgumentException e) {
         return ResponseEntity.badRequest().build();
     }
-<<<<<<< Updated upstream
 
-    
-=======
     }
 
->>>>>>> Stashed changes
     
 }

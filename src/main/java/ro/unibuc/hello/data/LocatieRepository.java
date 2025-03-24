@@ -6,9 +6,9 @@ import java.util.Optional;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import ro.unibuc.hello.data.ProprietarEntity;
+import ro.unibuc.hello.data.LocatieEntity;
 
 @Repository
-public interface ProprietarRepository extends MongoRepository<ProprietarEntity, String> {
-    Optional<ProprietarEntity> findById(String id);
+public interface LocatieRepository extends MongoRepository<LocatieEntity, String> {
+    Optional<LocatieEntity> findById(String id);
 }
