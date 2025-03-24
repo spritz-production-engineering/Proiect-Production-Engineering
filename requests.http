@@ -57,10 +57,13 @@ DELETE http://localhost:8080/greetings/{{deleteGreetingId}}
 
 #Endpoints proprietar
 
+###
 GET http://localhost:8080/api/proprietar
 
+###
 GET http://localhost:8080/api/proprietar/100
 
+###
 PUT http://localhost:8080/api/proprietar/100
 Content-Type: application/json
 
@@ -68,9 +71,12 @@ Content-Type: application/json
     "id": "100",
     "nume": "Popescu",
     "prenume": "Pavel",
-    "email": "pavel@test.com"
+    "email": "pavel@test.com",
+    "cnp": "5020601456786"
 }
 
+
+###
 POST http://localhost:8080/api/proprietar
 Content-Type: application/json
 
@@ -78,25 +84,31 @@ Content-Type: application/json
     "id": "100",
     "nume": "John",
     "prenume": "Doe",
-    "email": "john.doe@example.com"
+    "email": "john.doe@example.com",
+    "cnp": "5020601456786"
 }
 
 #Endpoints locatie
 
+###
 GET http://localhost:8080/api/locatie
 
+###
 GET http://localhost:8080/api/locatie/1000
 
+
+###
 PUT http://localhost:8080/api/locatie/1000
 Content-Type: application/json
 
 {
     "id": "1000",
     "tara": "Italy",
-    "oras": "Rome",
+    "oras": "Rome",   
     "strada": "Blue Street"
 }
 
+###
 POST http://localhost:8080/api/locatie
 Content-Type: application/json
 
@@ -109,10 +121,13 @@ Content-Type: application/json
 
 #Endpoints User
 
+###
 GET http://localhost:8080/api/user
 
+###
 GET http://localhost:8080/api/user/3000
 
+###
 PUT http://localhost:8080/api/user/3000
 Content-Type: application/json
 
@@ -123,6 +138,7 @@ Content-Type: application/json
     "email": "ioana@test.com"
 }
 
+###
 POST http://localhost:8080/api/user
 Content-Type: application/json
 
@@ -131,4 +147,11 @@ Content-Type: application/json
     "nume": "Marina",
     "prenume": "Ioana",
     "email": "ioana@test.com"
+
 }
+
+
+
+
+}
+
