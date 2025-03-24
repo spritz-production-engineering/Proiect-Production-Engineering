@@ -7,15 +7,11 @@ import ro.unibuc.hello.dto.Proprietar;
 import ro.unibuc.hello.data.InformationEntity;
 import ro.unibuc.hello.data.ProprietarEntity;
 import ro.unibuc.hello.data.ProprietarRepository;
+import ro.unibuc.hello.exception.EntityNotFoundException;
 import ro.unibuc.hello.util.CNPValidator;
-import ro.unibuc.hello.exception.EntityNotFoundException;
-import ro.unibuc.hello.data.ProprietarEntity;
-import ro.unibuc.hello.data.ProprietarRepository;
 
-import ro.unibuc.hello.exception.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
-import ro.unibuc.hello.util.CNPValidator;
 import java.util.stream.Collectors;
 
 @Component

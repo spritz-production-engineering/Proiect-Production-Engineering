@@ -5,8 +5,8 @@ import java.time.LocalDate;
 public class RezervareDto {
 
     private String id;
-    private ApartamentEntity apartament;
-    private UserEntity user;
+    private String idApartament;
+    private String idUser;
     private LocalDate startDate;
     private LocalDate endDate;
     private boolean active;
@@ -25,20 +25,20 @@ public class RezervareDto {
         this.id = id;
     }
 
-    public ApartamentEntity getApartament() {
-        return apartament;
+    public String getIdApartament() {
+        return idApartament;
     }
 
-    public void setApartament(ApartamentEntity apartament) {
-        this.apartament = apartament;
+    public void setIdApartament(String idApartament) {
+        this.idApartament = idApartament;
     }
 
-    public UserEntity getUser() {
-        return user;
+    public String getIdUser() {
+        return idUser;
     }
 
-    public void setUser(UserEntity user) {
-        this.user = user;
+    public void setIdUser(String idUser) {
+        this.idUser = idUser;
     }
 
     public LocalDate getStartDate() {
