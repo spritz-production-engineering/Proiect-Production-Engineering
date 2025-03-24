@@ -1,4 +1,4 @@
-package main.java.ro.unibuc.hello.dto;
+package ro.unibuc.hello.dto;
 
 import java.time.LocalDate;
 
@@ -17,11 +17,19 @@ public class RezervareDto {
         this.id = id;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public ApartamentEntity getApartament() {
         return apartament;
     }
 
-    public ApartamentEntity setApartament(ApartamentEntity apartament) {
+    public void setApartament(ApartamentEntity apartament) {
         this.apartament = apartament;
     }
 
@@ -29,7 +37,7 @@ public class RezervareDto {
         return user;
     }
 
-    public UserEntity setUser(User user) {
+    public void setUser(UserEntity user) {
         this.user = user;
     }
 
@@ -37,7 +45,7 @@ public class RezervareDto {
         return startDate;
     }
 
-    public LocalDate setStartDate(LocalDate startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
@@ -45,8 +53,15 @@ public class RezervareDto {
         return endDate;
     }
 
-    public LocalDate setEndDate(LocalDate endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
 }

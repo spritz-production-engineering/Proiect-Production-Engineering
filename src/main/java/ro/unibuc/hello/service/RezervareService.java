@@ -28,11 +28,25 @@ public class RezervareService {
 
     public RezervareDto saveRezervare(RezervareDto rezervareReq) {
         RezervareEntity rezervare = new RezervareEntity();
-        rezervare.setApartament(rezervareReq.getApartament());
-        rezervare.setStartDate(rezervareReq.getStartDate());
-        rezervare.setEndDate(rezervareReq.getEndDate());
-        rezervare.setUser(rezervareReq.getUser());
+
+        if(rezervareReq.getApartament() != null) {
+            rezervare.setApartament(rezervareReq.getApartament());
+        }
+
+        if(rezervareReq.getStartDate() != null) {
+            rezervare.setStartDate(rezervareReq.getStartDate());
+        }
+
+        if(rezervareReq.getEndDate() != null) {
+            rezervare.setEndDate(rezervareReq.getEndDate());
+        }
+
+        if(rezervareReq.getUser()) {
+            rezervare.setUser(rezervareReq.getUser());
+        }
+
         rezervareRepository.save(rezervare);
+        
         return new RezervareDto(rezervare.getId());
     }
 
