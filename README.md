@@ -20,8 +20,16 @@ This is a web application inspired by Airbnb, designed to facilitate apartment r
 
 ### `data/`
 - `ApartamentEntity.java` – Apartment data model
-- `ApartamentRepository.java` – Database interaction for apartments
+- `ApartamentRepository.java` – Repository for apartment database access
 - `InformationEntity.java` – Stores additional metadata
+- `UserEntity.java` – User model
+- `UserRepository.java` – Repository for users
+- `ProprietarEntity.java` – Property owner model
+- `ProprietarRepository.java` – Repository for property owners
+- `LocatieEntity.java` – Location model
+- `LocatieRepository.java` – Repository for locations
+- `RezervareEntity.java` – Reservation model
+- `RezervareRepository.java` – Repository for reservations
 
 ---
 
