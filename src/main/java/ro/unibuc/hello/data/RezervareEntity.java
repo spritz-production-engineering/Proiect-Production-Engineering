@@ -1,7 +1,6 @@
 package ro.unibuc.hello.data;
 
 import java.time.LocalDate;
-
 import org.springframework.data.annotation.Id;
 
 public class RezervareEntity {
@@ -21,11 +20,15 @@ public class RezervareEntity {
         return id;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public ApartamentEntity getApartament() {
         return apartament;
     }
 
-    public ApartamentEntity setApartament(ApartamentEntity apartament) {
+    public void setApartament(ApartamentEntity apartament) {
         this.apartament = apartament;
     }
 
@@ -33,7 +36,7 @@ public class RezervareEntity {
         return user;
     }
 
-    public UserEntity setUser(User user) {
+    public void setUser(UserEntity user) {
         this.user = user;
     }
 
@@ -41,7 +44,7 @@ public class RezervareEntity {
         return startDate;
     }
 
-    public LocalDate setStartDate(LocalDate startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
@@ -49,22 +52,23 @@ public class RezervareEntity {
         return endDate;
     }
 
-    public LocalDate setEndDate(LocalDate endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
-    public boolean getActive() {
+    public boolean isActive() {
         return active;
     }
 
-    public boolean setActive(boolean active) {
+    public void setActive(boolean active) {
         this.active = active;
     }
 
     @Override
     public String toString() {
         return String.format(
-                "Information[id='%s']",
-                );
+                "RezervareEntity[id='%s', apartament='%s', user='%s', startDate='%s', endDate='%s', active='%s']",
+                id, apartament, user, startDate, endDate, active
+        );
     }
 }

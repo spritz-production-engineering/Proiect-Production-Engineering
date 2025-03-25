@@ -151,7 +151,15 @@ Content-Type: application/json
 }
 
 
+###
+POST http://localhost:8080/api/rezervare
+Content-Type: application/json
 
-
+{
+    "apartament": "100",
+    "user": 100,
+    "startDate": "2025-04-01",
+    "endDate": "2025-04-07"
 }
+
 
