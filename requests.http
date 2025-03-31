@@ -138,26 +138,51 @@ Content-Type: application/json
     "email": "ioana@test.com"
 }
 
+
+----------------------------------------------
+Flow pentru creare rezervare noua
+----------------------------------------------
 ###
 POST http://localhost:8080/api/user
 Content-Type: application/json
 
 {
-    "id": "3000",
+    "id": "100",
     "nume": "Marina",
     "prenume": "Ioana",
     "email": "ioana@test.com"
-
 }
 
+###
+POST http://localhost:8080/api/locatie
+Content-Type: application/json
+
+{
+    "id": "101",
+    "tara": "Italy",
+    "oras": "Rome",
+    "strada": "Rose Street"
+}
+
+###
+POST http://localhost:8080/api/proprietar
+Content-Type: application/json
+
+{
+    "id": "100",
+    "nume": "John",
+    "prenume": "Doe",
+    "email": "john.doe@example.com",
+    "cnp": "5020601456786"
+}
 
 ###
 POST http://localhost:8080/api/rezervare
 Content-Type: application/json
 
 {
-    "apartament": "100",
-    "user": 100,
+    "idApartament": "100",
+    "idUser": 100,
     "startDate": "2025-04-01",
     "endDate": "2025-04-07"
 }
