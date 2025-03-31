@@ -1,7 +1,10 @@
 package ro.unibuc.hello.service;
 
+import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
+import org.springframework.web.server.ResponseStatusException;
 
 import ro.unibuc.hello.data.ApartamentEntity;
 import ro.unibuc.hello.data.InformationEntity;
@@ -39,25 +42,26 @@ public class RezervareService {
     public RezervareDto saveRezervare(RezervareDto rezervareReq) {
         RezervareEntity rezervare = new RezervareEntity();
 
-        if (rezervareReq.getIdApartament() != null) {
-            ApartamentEntity apartament = apartamentRepository.findById(rezervareReq.getIdApartament())
-                .orElseThrow(() -> new RuntimeException("Apartament not found"));
-            rezervare.setApartament(apartament);
+        if(rezervareReq.getIdApartament() == null ||
+            rezervareReq.getIdUser() == null ||
+            rezervareReq.getStartDate() == null ||
+            rezervareReq.getEndDate() == null
+        ) 
+        {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Nu sunt destule informații pentru a crea o rezervare");
         }
 
-        if (rezervareReq.getIdUser() != null) {
-            UserEntity user = userRepository.findById(rezervareReq.getIdUser())
-                .orElseThrow(() -> new RuntimeException("User not found"));
-            rezervare.setUser(user);
-        }
+        ApartamentEntity apartament = apartamentRepository.findById(rezervareReq.getIdApartament())
+            .orElseThrow(() -> new RuntimeException("Apartament not found"));
+        rezervare.setApartament(apartament);
 
-        if(rezervareReq.getStartDate() != null) {
-            rezervare.setStartDate(rezervareReq.getStartDate());
-        }
+        UserEntity user = userRepository.findById(rezervareReq.getIdUser())
+            .orElseThrow(() -> new RuntimeException("User not found"));
+        rezervare.setUser(user);
 
-        if(rezervareReq.getEndDate() != null) {
-            rezervare.setEndDate(rezervareReq.getEndDate());
-        }
+        rezervare.setStartDate(rezervareReq.getStartDate());
+
+        rezervare.setEndDate(rezervareReq.getEndDate());
 
         rezervare.setActive(false);
 
