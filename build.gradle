@@ -48,6 +48,11 @@ dependencies {
     testImplementation "org.testcontainers:mongodb:$testcontainersVersion"
 	testImplementation 'org.mongodb:mongodb-driver-sync:5.0.1'
 
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+	testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+
+
 	//	E2E tests
 	runtimeOnly "org.junit.vintage:junit-vintage-engine:$junitVersion"
 	testImplementation "io.cucumber:cucumber-core:$cucumberVersion"
