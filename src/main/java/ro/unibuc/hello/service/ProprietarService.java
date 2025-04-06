@@ -2,7 +2,7 @@ package ro.unibuc.hello.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
+import ro.unibuc.hello.exception.EntityNotFoundException;
 import ro.unibuc.hello.dto.Proprietar;
 import ro.unibuc.hello.data.ProprietarEntity;
 import ro.unibuc.hello.data.ProprietarRepository;
@@ -65,5 +65,15 @@ public class ProprietarService {
 
         return proprietarRepository.save(existingProprietar);
     });
+    }
+
+    public void deleteProprietar(String id) throws EntityNotFoundException {
+        ProprietarEntity entity = proprietarRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException(String.valueOf(id)));
+        proprietarRepository.delete(entity);
+    }
+
+    public void deleteAllProprietari() {
+        proprietarRepository.deleteAll();
     }
 }
