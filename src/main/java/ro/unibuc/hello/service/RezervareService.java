@@ -32,14 +32,28 @@ public class RezervareService {
     @Autowired
     private ApartamentRepository apartamentRepository;
 
-    public List<RezervareDto> getAllReservationsByOwnerId(String id_proprietar) {
-        List<RezervareEntity> rezervari = rezervareRepository.findAllById(List.of(id_proprietar));
+    public List<RezervareEntity> getAllReservationsByOwnerId(String id_proprietar) {
+        List<RezervareEntity> rezervari = rezervareRepository.findAllByApartament_IdProprietar(id_proprietar);
+        
         return rezervari.stream()
-                .map(rezervare -> new RezervareDto(rezervare.getId()))
                 .collect(Collectors.toList());
     }
 
-    public RezervareDto saveRezervare(RezervareDto rezervareReq) {
+    public List<RezervareEntity> getAllReservationsByUserId(String id_user) {
+        List<RezervareEntity> rezervari = rezervareRepository.findAllByUser_Id(id_user);
+        
+        return rezervari.stream()
+                .collect(Collectors.toList());
+    }
+
+    public RezervareEntity getReservationById(String id_rezervare) {
+        RezervareEntity rezervare = rezervareRepository.findById(id_rezervare)
+                                    .orElseThrow(() -> new EntityNotFoundException(id_rezervare));
+
+        return rezervare; 
+    }
+
+    public RezervareEntity saveRezervare(RezervareDto rezervareReq) {
         RezervareEntity rezervare = new RezervareEntity();
         
         if(rezervareReq.getIdApartament() == null ||
@@ -69,17 +83,24 @@ public class RezervareService {
 
         rezervareRepository.save(rezervare);
         
-        return new RezervareDto(rezervare.getId());
+        return rezervare;
     }
 
-    public RezervareDto updateRezervare(String id_proprietar, String id_rezervare) {
+    public RezervareEntity updateRezervare(String id_rezervare) {
         RezervareEntity rezervare = rezervareRepository.findById(id_rezervare)
                                     .orElseThrow(() -> new EntityNotFoundException(id_rezervare));
 
-        rezervare.setActive(true);
+        rezervare.setActive(!rezervare.isActive());
 
         rezervareRepository.save(rezervare);
         
-        return new RezervareDto(rezervare.getId());
+        return rezervare;
+    }
+
+    public void deleteRezervare(String id_rezervare) {
+        RezervareEntity rezervare = rezervareRepository.findById(id_rezervare)
+                                    .orElseThrow(() -> new EntityNotFoundException(id_rezervare));
+                                    
+        rezervareRepository.delete(rezervare);
     }
 }
