@@ -73,7 +73,14 @@ This is a web application inspired by Airbnb, designed to facilitate apartment r
 - ID validation
 
 
-## Performane test
+
+## ✅ Performance test
+
+- Integration tested with Testcontainers (MongoDB)
+- Performance tested using Apache JMeter (GET /api/user)
+- JMeter script: `performance/jmeter/user-performance-test.jmx`
+- HTML report: `performance/jmeter/report/index.html`
+
 
 ![image](https://github.com/user-attachments/assets/7cea1a02-af53-460a-bdf0-655a318643f5)
 
