@@ -73,8 +73,9 @@ This is a web application inspired by Airbnb, designed to facilitate apartment r
 - ID validation
 
 
+## Performane test
 
-
+![image](https://github.com/user-attachments/assets/7cea1a02-af53-460a-bdf0-655a318643f5)
 
 
 
