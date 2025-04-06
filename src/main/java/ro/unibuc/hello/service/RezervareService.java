@@ -41,7 +41,7 @@ public class RezervareService {
 
     public RezervareDto saveRezervare(RezervareDto rezervareReq) {
         RezervareEntity rezervare = new RezervareEntity();
-
+        
         if(rezervareReq.getIdApartament() == null ||
             rezervareReq.getIdUser() == null ||
             rezervareReq.getStartDate() == null ||
@@ -50,6 +50,8 @@ public class RezervareService {
         {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Nu sunt destule informații pentru a crea o rezervare");
         }
+
+        rezervare.setId(rezervareReq.getId());
 
         ApartamentEntity apartament = apartamentRepository.findById(rezervareReq.getIdApartament())
             .orElseThrow(() -> new RuntimeException("Apartament not found"));

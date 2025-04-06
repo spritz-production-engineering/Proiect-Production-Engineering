@@ -177,14 +177,34 @@ Content-Type: application/json
 }
 
 ###
+POST http://localhost:8080/api/apartamente
+Content-Type: application/json
+
+{
+    "id": "100",
+    "etaj": 4,
+    "idLocatie": "101",
+    "idProprietar": "100",
+    "numarApartament": 27,
+    "numarBai": 2,
+    "numarCamere": 3,
+    "numarPaturi": 4,
+    "tara": "Italy",
+    "oras": "Rome"
+}
+
+###
 POST http://localhost:8080/api/rezervare
 Content-Type: application/json
 
 {
     "idApartament": "100",
-    "idUser": "101",
+    "idUser": "100",
     "startDate": "2025-04-01",
     "endDate": "2025-04-07"
 }
+
+###
+GET http://localhost:8080/api/rezervare/67f29e4197f73d1bf4fff4dd
 
 
