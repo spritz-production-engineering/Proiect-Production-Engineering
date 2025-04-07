@@ -77,12 +77,18 @@ This is a web application inspired by Airbnb, designed to facilitate apartment r
 ## ✅ Performance test
 
 - Integration tested with Testcontainers (MongoDB)
-- Performance tested using Apache JMeter (GET /api/user)
+- Performance tested using Apache JMeter for the following endpoints:
+  - `GET /api/user` – retrieve all users
+  - `GET /api/user/{id}` – retrieve a specific user
+  - `POST /api/user` – create a new user
+  - `PUT /api/user/{id}` – update an existing user
+  - `DELETE /api/user/{id}` – delete a user
 - JMeter script: `performance/jmeter/user-performance-test.jmx`
 - HTML report: `performance/jmeter/report/index.html`
 
 
-![image](https://github.com/user-attachments/assets/7cea1a02-af53-460a-bdf0-655a318643f5)
+![image](https://github.com/user-attachments/assets/835ab724-a521-4a96-9670-409963242168)
+
 
 
 
