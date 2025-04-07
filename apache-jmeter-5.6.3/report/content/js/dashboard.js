@@ -133,7 +133,7 @@ $(document).ready(function() {
         widgets: ['zebra']
     });
 
-    var data = {"OkPercent": 20.0, "KoPercent": 80.0};
+    var data = {"OkPercent": 100.0, "KoPercent": 0.0};
     var dataset = [
         {
             "label" : "FAIL",
@@ -173,7 +173,7 @@ $(document).ready(function() {
     });
 
     // Creates APDEX table
-    createTable($("#apdexTable"), {"supportsControllersDiscrimination": true, "overall": {"data": [0.2, 500, 1500, "Total"], "isController": false}, "titles": ["Apdex", "T (Toleration threshold)", "F (Frustration threshold)", "Label"], "items": [{"data": [1.0, 500, 1500, "GET all proprietari"], "isController": false}, {"data": [0.0, 500, 1500, "PUT update proprietar"], "isController": false}, {"data": [0.0, 500, 1500, "POST create proprietar"], "isController": false}, {"data": [0.0, 500, 1500, "DELETE proprietar"], "isController": false}, {"data": [0.0, 500, 1500, "GET proprietar by ID"], "isController": false}]}, function(index, item){
+    createTable($("#apdexTable"), {"supportsControllersDiscrimination": true, "overall": {"data": [1.0, 500, 1500, "Total"], "isController": false}, "titles": ["Apdex", "T (Toleration threshold)", "F (Frustration threshold)", "Label"], "items": [{"data": [1.0, 500, 1500, "GET all proprietari"], "isController": false}, {"data": [1.0, 500, 1500, "PUT update proprietar"], "isController": false}, {"data": [1.0, 500, 1500, "DELETE proprietar"], "isController": false}, {"data": [1.0, 500, 1500, "GET proprietar by ID"], "isController": false}]}, function(index, item){
         switch(index){
             case 0:
                 item = item.toFixed(3);
@@ -187,7 +187,7 @@ $(document).ready(function() {
     }, [[0, 0]], 3);
 
     // Create statistics table
-    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 5, 4, 80.0, 41.0, 8, 109, 19.0, 109.0, 109.0, 109.0, 23.58490566037736, 5.988354952830189, 5.679724351415095], "isController": false}, "titles": ["Label", "#Samples", "FAIL", "Error %", "Average", "Min", "Max", "Median", "90th pct", "95th pct", "99th pct", "Transactions/s", "Received", "Sent"], "items": [{"data": ["GET all proprietari", 1, 0, 0.0, 51.0, 51, 51, 51.0, 51.0, 51.0, 51.0, 19.607843137254903, 7.774203431372549, 3.5998774509803924], "isController": false}, {"data": ["PUT update proprietar", 1, 1, 100.0, 18.0, 18, 18, 18.0, 18.0, 18.0, 18.0, 55.55555555555555, 13.943142361111112, 17.740885416666668], "isController": false}, {"data": ["POST create proprietar", 1, 1, 100.0, 109.0, 109, 109, 109.0, 109.0, 109.0, 109.0, 9.174311926605505, 2.2308629587155964, 2.7236238532110093], "isController": false}, {"data": ["DELETE proprietar", 1, 1, 100.0, 19.0, 19, 19, 19.0, 19.0, 19.0, 19.0, 52.63157894736842, 13.72327302631579, 11.204769736842106], "isController": false}, {"data": ["GET proprietar by ID", 1, 1, 100.0, 8.0, 8, 8, 8.0, 8.0, 8.0, 8.0, 125.0, 14.7705078125, 23.92578125], "isController": false}]}, function(index, item){
+    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 4, 0, 0.0, 34.75, 15, 72, 26.0, 72.0, 72.0, 72.0, 28.57142857142857, 8.133370535714285, 6.382533482142857], "isController": false}, "titles": ["Label", "#Samples", "FAIL", "Error %", "Average", "Min", "Max", "Median", "90th pct", "95th pct", "99th pct", "Transactions/s", "Received", "Sent"], "items": [{"data": ["GET all proprietari", 1, 0, 0.0, 72.0, 72, 72, 72.0, 72.0, 72.0, 72.0, 13.888888888888888, 6.781684027777779, 2.5499131944444446], "isController": false}, {"data": ["PUT update proprietar", 1, 0, 0.0, 15.0, 15, 15, 15.0, 15.0, 15.0, 15.0, 66.66666666666667, 18.229166666666668, 20.8984375], "isController": false}, {"data": ["DELETE proprietar", 1, 0, 0.0, 16.0, 16, 16, 16.0, 16.0, 16.0, 16.0, 62.5, 7.38525390625, 13.0615234375], "isController": false}, {"data": ["GET proprietar by ID", 1, 0, 0.0, 36.0, 36, 36, 36.0, 36.0, 36.0, 36.0, 27.777777777777775, 7.188585069444445, 5.208333333333334], "isController": false}]}, function(index, item){
         switch(index){
             // Errors pct
             case 3:
@@ -217,7 +217,7 @@ $(document).ready(function() {
     }, [[0, 0]], 0, summaryTableHeader);
 
     // Create error table
-    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": [{"data": ["400", 2, 50.0, 40.0], "isController": false}, {"data": ["500", 1, 25.0, 20.0], "isController": false}, {"data": ["404", 1, 25.0, 20.0], "isController": false}]}, function(index, item){
+    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": []}, function(index, item){
         switch(index){
             case 2:
             case 3:
@@ -228,7 +228,7 @@ $(document).ready(function() {
     }, [[1, 1]]);
 
         // Create top5 errors by sampler
-    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 5, 4, "400", 2, "500", 1, "404", 1, "", "", "", ""], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": [], "isController": false}, {"data": ["PUT update proprietar", 1, 1, "400", 1, "", "", "", "", "", "", "", ""], "isController": false}, {"data": ["POST create proprietar", 1, 1, "400", 1, "", "", "", "", "", "", "", ""], "isController": false}, {"data": ["DELETE proprietar", 1, 1, "500", 1, "", "", "", "", "", "", "", ""], "isController": false}, {"data": ["GET proprietar by ID", 1, 1, "404", 1, "", "", "", "", "", "", "", ""], "isController": false}]}, function(index, item){
+    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 4, 0, "", "", "", "", "", "", "", "", "", ""], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": [], "isController": false}, {"data": [], "isController": false}, {"data": [], "isController": false}, {"data": [], "isController": false}]}, function(index, item){
         return item;
     }, [[0, 0]], 0);
 

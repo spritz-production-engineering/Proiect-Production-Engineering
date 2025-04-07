@@ -1,6 +1,5 @@
-timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
-1744033113711,109,POST create proprietar,400,,Load Test Users Group 1-1,text,false,,249,304,1,1,http://localhost:8080/api/proprietar,89,0,28
-1744033113825,51,GET all proprietari,200,,Load Test Users Group 1-1,text,true,,406,188,1,1,http://localhost:8080/api/proprietar,51,0,1
-1744033113876,8,GET proprietar by ID,404,,Load Test Users Group 1-1,,false,,121,196,1,1,http://localhost:8080/api/proprietar/test123,8,0,0
-1744033113885,18,PUT update proprietar,400,,Load Test Users Group 1-1,text,false,,257,327,1,1,http://localhost:8080/api/proprietar/test123,18,0,0
-1744033113904,19,DELETE proprietar,500,,Load Test Users Group 1-1,text,false,,267,218,1,1,http://localhost:8080/api/proprietar/test123,19,0,2
+1744044035292,642,POST create proprietar,200,,Load Test Users Group 1-1,text,true,,265,302,1,1,http://localhost:8080/api/proprietar,636,0,26
+1744044035944,72,GET all proprietari,200,,Load Test Users Group 1-1,text,true,,500,188,1,1,http://localhost:8080/api/proprietar,70,0,0
+1744044036017,36,GET proprietar by ID,200,,Load Test Users Group 1-1,text,true,,265,192,1,1,http://localhost:8080/api/proprietar/123,35,0,0
+1744044036053,15,PUT update proprietar,200,,Load Test Users Group 1-1,text,true,,280,321,1,1,http://localhost:8080/api/proprietar/123,14,0,0
+1744044036068,16,DELETE proprietar,200,,Load Test Users Group 1-1,,true,,121,214,1,1,http://localhost:8080/api/proprietar/123,16,0,0
