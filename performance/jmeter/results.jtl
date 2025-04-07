@@ -1,0 +1,6 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1744019350337,32,POST create user,200,,Load Test Users Group 1-1,text,true,,247,277,1,1,http://localhost:8080/api/user,29,0,20
+1744019350371,3,GET all users,200,,Load Test Users Group 1-1,text,true,,324,182,1,1,http://localhost:8080/api/user,3,0,0
+1744019350375,2,GET user by ID,200,,Load Test Users Group 1-1,text,true,,247,190,1,1,http://localhost:8080/api/user/test123,2,0,0
+1744019350378,6,PUT update user,200,,Load Test Users Group 1-1,text,true,,262,299,1,1,http://localhost:8080/api/user/test123,6,0,0
+1744019350385,7,DELETE user,200,,Load Test Users Group 1-1,,true,,121,212,1,1,http://localhost:8080/api/user/test123,7,0,0

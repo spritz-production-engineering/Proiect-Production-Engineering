@@ -3,7 +3,7 @@ package ro.unibuc.hello.util;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.time.format.ResolverStyle;
+import java.time.format.ResolverStyle;  
 
 public class CNPValidator {
     private static final int[] CONTROL_WEIGHTS = {2, 7, 9, 1, 4, 6, 3, 5, 8, 2, 7, 9};
