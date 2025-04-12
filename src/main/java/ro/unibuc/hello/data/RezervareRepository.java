@@ -11,5 +11,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface RezervareRepository extends MongoRepository<RezervareEntity, String> {
-    
+    List<RezervareEntity> findAllByApartament_IdProprietar(String idProprietar);
+    List<RezervareEntity> findAllByUser_Id(String idUser);
 }

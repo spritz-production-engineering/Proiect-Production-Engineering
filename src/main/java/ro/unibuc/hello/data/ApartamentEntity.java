@@ -12,6 +12,21 @@ public class ApartamentEntity {
     private String tara;
     private String oras;
 
+    public ApartamentEntity() {}
+
+    public ApartamentEntity(String id, int etaj, String idLocatie, String idProprietar, int numarApartament, int numarBai, int numarCamere, int numarPaturi, String tara, String oras) {
+        this.id = id;
+        this.etaj = etaj;
+        this.idLocatie = idLocatie;
+        this.idProprietar = idProprietar;
+        this.numarApartament = numarApartament;
+        this.numarBai = numarBai;
+        this.numarCamere = numarCamere;
+        this.numarPaturi = numarPaturi;
+        this.tara = tara;
+        this.oras = oras;
+    }
+
     // Getters and Setters
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }

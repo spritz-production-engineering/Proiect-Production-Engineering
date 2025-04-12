@@ -29,6 +29,7 @@ public class ApartamentService {
     {
         ApartamentEntity apartamentNou = new ApartamentEntity();
 
+        apartamentNou.setId(apartament.getId());
         apartamentNou.setEtaj(apartament.getEtaj());
         apartamentNou.setIdLocatie(apartament.getIdLocatie());
         apartamentNou.setIdProprietar(apartament.getIdProprietar());
