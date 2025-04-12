@@ -339,3 +339,18 @@ Content-Type: application/json
     "startDate": "2025-04-01",
     "endDate": "2025-04-07"
 }
+
+POST http://localhost:8080/api/user
+Content-Type: application/json
+
+{
+    "id": "100",
+    "nume": "Test",
+    "prenume": "User",
+    "email": "testuser@example.com"
+}
+
+
+### Delete user by ID
+@deleteUserId = 100
+DELETE http://localhost:8080/api/user/{{deleteUserId}}
