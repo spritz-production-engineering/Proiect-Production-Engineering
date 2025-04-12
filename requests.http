@@ -181,7 +181,7 @@ POST http://localhost:8080/api/apartamente
 Content-Type: application/json
 
 {
-    "id": "100",
+    "id": "rez1",
     "etaj": 4,
     "idLocatie": "101",
     "idProprietar": "100",
@@ -221,3 +221,121 @@ PUT http://localhost:8080/api/rezervare/101
 ###
 DELETE http://localhost:8080/api/rezervare/101
 
+
+----------------------------------------------
+Flow pentru a functiona testarea pe rezervare
+----------------------------------------------
+
+###
+POST http://localhost:8080/api/user
+Content-Type: application/json
+
+{
+    "id": "u1",
+    "nume": "Anda",
+    "prenume": "Mirela",
+    "email": "andamirela@test.com"
+}
+
+###
+POST http://localhost:8080/api/user
+Content-Type: application/json
+
+{
+    "id": "u2",
+    "nume": "Baciu",
+    "prenume": "Rares",
+    "email": "raresb@test.com"
+}
+
+###
+POST http://localhost:8080/api/locatie
+Content-Type: application/json
+
+{
+    "id": "1",
+    "tara": "Italy",
+    "oras": "Rome",
+    "strada": "Rose Street"
+}
+
+###
+POST http://localhost:8080/api/locatie
+Content-Type: application/json
+
+{
+    "id": "2",
+    "tara": "Spain",
+    "oras": "Barcelona",
+    "strada": "Barcelona Street"
+}
+
+###
+POST http://localhost:8080/api/proprietar
+Content-Type: application/json
+
+{
+    "id": "p1",
+    "nume": "John",
+    "prenume": "Doe",
+    "email": "john.doe@example.com",
+    "cnp": "5020601456786"
+}
+
+###
+POST http://localhost:8080/api/proprietar
+Content-Type: application/json
+
+{
+    "id": "p2",
+    "nume": "Popa",
+    "prenume": "Dorian",
+    "email": "dorianpopa@example.com",
+    "cnp": "5020601456786"
+}
+
+###
+POST http://localhost:8080/api/apartamente
+Content-Type: application/json
+
+{
+    "id": "1",
+    "etaj": 4,
+    "idLocatie": "1",
+    "idProprietar": "p1",
+    "numarApartament": 27,
+    "numarBai": 2,
+    "numarCamere": 3,
+    "numarPaturi": 4,
+    "tara": "Italy",
+    "oras": "Rome"
+}
+
+###
+POST http://localhost:8080/api/apartamente
+Content-Type: application/json
+
+{
+    "id": "2",
+    "etaj": 4,
+    "idLocatie": "2",
+    "idProprietar": "p2",
+    "numarApartament": 13,
+    "numarBai": 1,
+    "numarCamere": 2,
+    "numarPaturi": 2,
+    "tara": "Spain",
+    "oras": "Barcelona"
+}
+
+###
+POST http://localhost:8080/api/rezervare
+Content-Type: application/json
+
+{
+    "id": "105",
+    "idApartament": "101",
+    "idUser": "100",
+    "startDate": "2025-04-01",
+    "endDate": "2025-04-07"
+}

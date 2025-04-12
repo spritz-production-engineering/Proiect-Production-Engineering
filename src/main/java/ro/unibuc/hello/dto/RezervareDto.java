@@ -17,6 +17,14 @@ public class RezervareDto {
         this.id = id;
     }
 
+    public RezervareDto(String id, String idApartament, String idUser, LocalDate startDate, LocalDate endDate) {
+        this.id = id;
+        this.idApartament = idApartament;
+        this.idUser = idUser;
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+
     public String getId() {
         return id;
     }

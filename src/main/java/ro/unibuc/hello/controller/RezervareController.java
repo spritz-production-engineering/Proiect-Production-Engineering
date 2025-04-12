@@ -51,10 +51,14 @@ public class RezervareController {
 
     @DeleteMapping("/api/rezervare/{id_rezervare}")
     @ResponseBody
-    public String deleteRezervare(@PathVariable String id_rezervare) throws EntityNotFoundException {
+    public void deleteRezervare(@PathVariable String id_rezervare) throws EntityNotFoundException {
         rezervareService.deleteRezervare(id_rezervare);
+    }
 
-        return new String("Stergerea a fost facuta cu succes!");
+    @DeleteMapping("/api/rezervare")
+    @ResponseBody
+    public void deleteAllRezervare() {
+        rezervareService.deleteAllRezervare();
     }
 }  
 

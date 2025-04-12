@@ -97,10 +97,14 @@ public class RezervareService {
         return rezervare;
     }
 
-    public void deleteRezervare(String id_rezervare) {
+    public void deleteRezervare(String id_rezervare) throws EntityNotFoundException {
         RezervareEntity rezervare = rezervareRepository.findById(id_rezervare)
-                                    .orElseThrow(() -> new EntityNotFoundException(id_rezervare));
+                                    .orElseThrow(() -> new EntityNotFoundException(String.valueOf(id_rezervare)));
                                     
         rezervareRepository.delete(rezervare);
+    }
+
+    public void deleteAllRezervare() {
+        rezervareRepository.deleteAll();
     }
 }
