@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // package ro.unibuc.hello.controller;
+=======
+/*package ro.unibuc.hello.controller;
+>>>>>>> unitTestProprietar
 
 // import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -33,6 +37,7 @@
 // @Tag("IntegrationTest")
 // public class GreetingsControllerIntegrationTest {
 
+<<<<<<< HEAD
 //     @Container
 //     public static MongoDBContainer mongoDBContainer = new MongoDBContainer("mongo:6.0.20")
 //             .withExposedPorts(27017)
@@ -45,6 +50,17 @@
 //     public static void setUp() {
 //         mongoDBContainer.start();
 //     }
+=======
+    @Container
+    public static MongoDBContainer mongoDBContainer = new MongoDBContainer("mongo:6.0.20")
+            .withExposedPorts(27017)
+            .withSharding();
+            
+    @BeforeAll
+    public static void setUp() {
+        mongoDBContainer.start();
+    }
+>>>>>>> unitTestProprietar
 
 //     @AfterAll
 //     public static void tearDown() {
@@ -130,6 +146,7 @@
 //         mockMvc.perform(delete("/greetings/1"))
 //             .andExpect(status().isOk());
 
+<<<<<<< HEAD
 //         mockMvc.perform(get("/greetings"))
 //                 .andExpect(status().isOk())
 //                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
@@ -137,3 +154,13 @@
 //                 .andExpect(jsonPath("$[0].content").value("Hello 2"));
 //     }
 // }
+=======
+        mockMvc.perform(get("/greetings"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.length()").value(1))
+                .andExpect(jsonPath("$[0].content").value("Hello 2"));
+    }
+}
+    */
+>>>>>>> unitTestProprietar

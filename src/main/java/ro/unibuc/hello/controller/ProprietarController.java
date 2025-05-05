@@ -2,7 +2,7 @@ package ro.unibuc.hello.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import ro.unibuc.hello.exception.EntityNotFoundException;
 import ro.unibuc.hello.dto.Proprietar;
 import ro.unibuc.hello.data.ProprietarEntity;
 import ro.unibuc.hello.service.ProprietarService;
@@ -71,6 +71,12 @@ public class ProprietarController {
         return ResponseEntity.badRequest().build();
     }
 
+    }
+
+    @DeleteMapping("/api/proprietar/{id}")
+    @ResponseBody
+    public void deleteProprietar(@PathVariable String id) throws EntityNotFoundException {
+        proprietarService.deleteProprietar(id);
     }
 
     

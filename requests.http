@@ -88,6 +88,23 @@ Content-Type: application/json
     "cnp": "5020601456786"
 }
 
+
+###
+POST http://localhost:8080/api/proprietar
+Content-Type: application/json
+
+{
+    "id": "103",
+    "nume": "Ana",
+    "prenume": "Maria",
+    "email": "ana@example.com",
+    "cnp": "5020601456786"
+}
+
+###
+DELETE http://localhost:8080/api/proprietar/103
+
+
 #Endpoints locatie
 
 ###
@@ -128,7 +145,7 @@ GET http://localhost:8080/api/user
 GET http://localhost:8080/api/user/3000
 
 ###
-PUT http://localhost:8080/api/user/3000
+POST http://localhost:8080/api/user
 Content-Type: application/json
 
 {
@@ -138,6 +155,25 @@ Content-Type: application/json
     "email": "ioana@test.com"
 }
 
+###
+GET http://localhost:8080/api/apartamente
+
+###
+POST http://localhost:8080/api/apartamente
+Content-Type: application/json
+
+{
+    "id": "100",
+    "etaj": 4,
+    "idLocatie": "1000",
+    "idProprietar": "100",
+    "numarApartament": 27,
+    "numarBai": 2,
+    "numarCamere": 3,
+    "numarPaturi": 4,
+    "tara": "Italy",
+    "oras": "Rome"
+}
 
 ----------------------------------------------
 Flow pentru creare rezervare noua

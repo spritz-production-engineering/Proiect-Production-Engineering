@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "Total" : {
     "transaction" : "Total",
     "sampleCount" : 4,
@@ -78,5 +79,102 @@
     "throughput" : 100.0,
     "receivedKBytesPerSec" : 48.33984375,
     "sentKBytesPerSec" : 20.60546875
+=======
+  "GET all proprietari" : {
+    "transaction" : "GET all proprietari",
+    "sampleCount" : 1,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 69.0,
+    "medianResTime" : 69.0,
+    "minResTime" : 69.0,
+    "maxResTime" : 69.0,
+    "pct1ResTime" : 69.0,
+    "pct2ResTime" : 69.0,
+    "pct3ResTime" : 69.0,
+    "throughput" : 14.492753623188406,
+    "receivedKBytesPerSec" : 7.076539855072463,
+    "sentKBytesPerSec" : 2.660778985507246
+  },
+  "PUT update proprietar" : {
+    "transaction" : "PUT update proprietar",
+    "sampleCount" : 1,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 29.0,
+    "medianResTime" : 29.0,
+    "minResTime" : 29.0,
+    "maxResTime" : 29.0,
+    "pct1ResTime" : 29.0,
+    "pct2ResTime" : 29.0,
+    "pct3ResTime" : 29.0,
+    "throughput" : 34.48275862068965,
+    "receivedKBytesPerSec" : 9.428879310344827,
+    "sentKBytesPerSec" : 10.809536637931034
+  },
+  "POST create proprietar" : {
+    "transaction" : "POST create proprietar",
+    "sampleCount" : 1,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 416.0,
+    "medianResTime" : 416.0,
+    "minResTime" : 416.0,
+    "maxResTime" : 416.0,
+    "pct1ResTime" : 416.0,
+    "pct2ResTime" : 416.0,
+    "pct3ResTime" : 416.0,
+    "throughput" : 2.403846153846154,
+    "receivedKBytesPerSec" : 0.622089092548077,
+    "sentKBytesPerSec" : 0.7089468149038461
+  },
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 5,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 118.2,
+    "medianResTime" : 40.0,
+    "minResTime" : 29.0,
+    "maxResTime" : 416.0,
+    "pct1ResTime" : 416.0,
+    "pct2ResTime" : 416.0,
+    "pct3ResTime" : 416.0,
+    "throughput" : 8.347245409015025,
+    "receivedKBytesPerSec" : 2.3329898789649417,
+    "sentKBytesPerSec" : 1.9841011060100169
+  },
+  "DELETE proprietar" : {
+    "transaction" : "DELETE proprietar",
+    "sampleCount" : 1,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 37.0,
+    "medianResTime" : 37.0,
+    "minResTime" : 37.0,
+    "maxResTime" : 37.0,
+    "pct1ResTime" : 37.0,
+    "pct2ResTime" : 37.0,
+    "pct3ResTime" : 37.0,
+    "throughput" : 27.027027027027028,
+    "receivedKBytesPerSec" : 3.193623310810811,
+    "sentKBytesPerSec" : 5.648226351351352
+  },
+  "GET proprietar by ID" : {
+    "transaction" : "GET proprietar by ID",
+    "sampleCount" : 1,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 40.0,
+    "medianResTime" : 40.0,
+    "minResTime" : 40.0,
+    "maxResTime" : 40.0,
+    "pct1ResTime" : 40.0,
+    "pct2ResTime" : 40.0,
+    "pct3ResTime" : 40.0,
+    "throughput" : 25.0,
+    "receivedKBytesPerSec" : 6.4697265625,
+    "sentKBytesPerSec" : 4.6875
+>>>>>>> unitTestProprietar
   }
 }

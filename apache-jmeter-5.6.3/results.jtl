@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 1744092376544,403,POST create rezervare,200,,Rezervare Thread Group 1-1,text,true,,496,468,1,1,http://localhost:8080/api/rezervare,398,0,19
 1744092376957,17,GET rezervare by ID,200,,Rezervare Thread Group 1-1,text,true,,496,192,1,1,http://localhost:8080/api/rezervare/r100,16,0,0
 1744092376974,10,PUT update rezervare,200,,Rezervare Thread Group 1-1,text,true,,495,211,1,1,http://localhost:8080/api/rezervare/r100,10,0,0
@@ -54,3 +55,11 @@ timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success
 1743959642222,51,GET all users,200,,Load Test Users GET 1-6,text,true,,249,150,1,1,http://localhost:8080/api/user,30,0,0
 1743959642274,22,GET all users,200,,Load Test Users GET 1-6,text,true,,249,150,1,1,http://localhost:8080/api/user,17,0,0
 1743959642301,21,GET all users,200,,Load Test Users GET 1-6,text,true,,249,150,1,1,http://localhost:8080/api/user,20,0,0
+=======
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1744092640621,416,POST create proprietar,200,,Load Test Users Group 1-1,text,true,,265,302,1,1,http://localhost:8080/api/proprietar,411,0,28
+1744092641040,69,GET all proprietari,200,,Load Test Users Group 1-1,text,true,,500,188,1,1,http://localhost:8080/api/proprietar,69,0,0
+1744092641111,40,GET proprietar by ID,200,,Load Test Users Group 1-1,text,true,,265,192,1,1,http://localhost:8080/api/proprietar/123,40,0,0
+1744092641151,29,PUT update proprietar,200,,Load Test Users Group 1-1,text,true,,280,321,1,1,http://localhost:8080/api/proprietar/123,28,0,0
+1744092641183,37,DELETE proprietar,200,,Load Test Users Group 1-1,,true,,121,214,1,1,http://localhost:8080/api/proprietar/123,37,0,0
+>>>>>>> unitTestProprietar
