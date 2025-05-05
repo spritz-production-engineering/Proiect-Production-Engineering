@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import io.micrometer.core.annotation.Counted;
+import io.micrometer.core.annotation.Timed;
 
 @RestController
 public class ProprietarController {
@@ -27,6 +29,8 @@ public class ProprietarController {
     }
     
     @GetMapping("/api/proprietar")
+    @Timed(value = "hello.proprietar.time", description = "Time taken to return proprietari")
+    @Counted(value = "hello.proprietar.count", description = "Times proprietari was returned")
     public List<Proprietar> getAllProprietari(){
         return proprietarService.getAllProprietari()
                 .stream()

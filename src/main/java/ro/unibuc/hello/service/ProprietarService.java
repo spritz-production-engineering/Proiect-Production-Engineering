@@ -9,7 +9,7 @@ import ro.unibuc.hello.exception.InvalidCNPException;
 import ro.unibuc.hello.data.ProprietarEntity;
 import ro.unibuc.hello.data.ProprietarRepository;
 import ro.unibuc.hello.util.CNPValidator;
-
+import io.micrometer.core.instrument.MeterRegistry;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,11 +18,15 @@ public class ProprietarService {
     @Autowired
     private ProprietarRepository proprietarRepository;
 
+    @Autowired
+    private MeterRegistry metricsRegistry;
+
     public ProprietarService(ProprietarRepository proprietarRepository){
         this.proprietarRepository = proprietarRepository;
     }
 
     public List<ProprietarEntity> getAllProprietari(){
+        metricsRegistry.counter("my_non_aop_metric", "endpoint", "proprietari").increment(counter.incrementAndGet());
         return proprietarRepository.findAll();
     }
 

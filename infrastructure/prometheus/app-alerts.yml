@@ -18,3 +18,30 @@ groups:
         annotations:
           summary: Increased info retrieval rate {{ $labels.value}} {{ $value }}
           description: "A container has disappeared\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+
+      - alert: ERROR-HighErrorRate
+        expr: rate(hello_error_count_total[1m]) > 5
+        for: 15s
+        labels:
+          severity: error
+        annotations:
+          summary: "High error rate: {{ $value }}"
+          description: "Error rate exceeded 5 req/s\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+
+      - alert: WARNING-HighCPUUsage
+        expr: 100 - (avg by(instance)(rate(node_cpu_seconds_total{mode="idle"}[1m])) * 100) > 80
+        for: 30s
+        labels:
+          severity: warning
+        annotations:
+          summary: "High CPU usage detected: {{ $value }}%"
+          description: "CPU usage is over 80% for 30s on instance {{ $labels.instance }}"
+
+      - alert: CRITICAL-LowDiskSpace
+        expr: (node_filesystem_avail_bytes{mountpoint="/",fstype!~"tmpfs|overlay"} / node_filesystem_size_bytes{mountpoint="/",fstype!~"tmpfs|overlay"}) < 0.15
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Low disk space on {{ $labels.instance }} - {{ $value | humanizePercentage }}"
+          description: "Less than 15% disk space available on instance {{ $labels.instance }} mount /"
