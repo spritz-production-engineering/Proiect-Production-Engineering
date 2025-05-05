@@ -9,7 +9,7 @@ plugins {
 group = 'ro.unibuc'
 version = '0.0.1-SNAPSHOT'
 java {
-	sourceCompatibility = JavaVersion.VERSION_17
+	sourceCompatibility = JavaVersion.VERSION_21
 }
 
 repositories {
@@ -30,6 +30,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.session:spring-session-core'
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	// implementation 'org.mongodb:mongodb-driver-sync:4.10.2'
+	
 	implementation 'org.springframework.data:spring-data-mongodb'
 	implementation 'commons-io:commons-io:2.18.0'
 	implementation 'jakarta.annotation:jakarta.annotation-api:3.0.0'
@@ -46,7 +48,7 @@ dependencies {
 	// Integration tests - test containers dependencies
     testImplementation "org.testcontainers:testcontainers:$testcontainersVersion"
     testImplementation "org.testcontainers:mongodb:$testcontainersVersion"
-	testImplementation 'org.mongodb:mongodb-driver-sync:5.0.1'
+	// testImplementation 'org.mongodb:mongodb-driver-sync:5.0.1'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"

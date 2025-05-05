@@ -2,8 +2,10 @@ package ro.unibuc.hello.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ro.unibuc.hello.exception.EntityNotFoundException;
+
 import ro.unibuc.hello.dto.Proprietar;
+import ro.unibuc.hello.exception.EntityNotFoundException;
+import ro.unibuc.hello.exception.InvalidCNPException;
 import ro.unibuc.hello.data.ProprietarEntity;
 import ro.unibuc.hello.data.ProprietarRepository;
 import ro.unibuc.hello.util.CNPValidator;
@@ -31,7 +33,7 @@ public class ProprietarService {
     public Proprietar createProprietar(Proprietar proprietarDTO) {
 
         if (!CNPValidator.isValidCNP(proprietarDTO.getCnp())) {
-            throw new IllegalArgumentException("CNP-ul introdus nu este valid!");
+            throw new InvalidCNPException("CNP-ul introdus nu este valid!");
         }
 
         ProprietarEntity proprietarEntity = new ProprietarEntity(
@@ -55,7 +57,7 @@ public class ProprietarService {
         return proprietarRepository.findById(id).map(existingProprietar -> {
         
         if (!CNPValidator.isValidCNP(proprietarDetails.getCnp())) {
-            throw new IllegalArgumentException("CNP-ul introdus nu este valid!");
+            throw new InvalidCNPException("CNP-ul introdus nu este valid!");
         }
 
         existingProprietar.setNume(proprietarDetails.getNume());
@@ -67,7 +69,7 @@ public class ProprietarService {
     });
     }
 
-    public void deleteProprietar(String id) throws EntityNotFoundException {
+     public void deleteProprietar(String id) throws EntityNotFoundException {
         ProprietarEntity entity = proprietarRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException(String.valueOf(id)));
         proprietarRepository.delete(entity);
