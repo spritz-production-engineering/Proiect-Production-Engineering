@@ -36,11 +36,8 @@ public class GreetingsControllerIntegrationTest {
     @Container
     public static MongoDBContainer mongoDBContainer = new MongoDBContainer("mongo:6.0.20")
             .withExposedPorts(27017)
-            .withEnv("MONGO_INITDB_ROOT_USERNAME","root") // user
-            .withEnv("MONGO_INITDB_ROOT_PASSWORD", "example") // password
-            .withEnv("MONGO_INITDB_DATABASE", "testdb") // dbname
-            .withCommand("--auth");
-
+            .withSharding();
+            
     @BeforeAll
     public static void setUp() {
         mongoDBContainer.start();
